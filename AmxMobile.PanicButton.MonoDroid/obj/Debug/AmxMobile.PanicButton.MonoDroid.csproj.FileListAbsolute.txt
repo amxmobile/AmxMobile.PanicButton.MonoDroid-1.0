@@ -1,0 +1,11 @@
+c:\code\book\AmxMobile.PanicButton.MonoDroid\AmxMobile.PanicButton.MonoDroid\bin\Debug\AmxMobile.PanicButton.MonoDroid.dll
+c:\code\book\AmxMobile.PanicButton.MonoDroid\AmxMobile.PanicButton.MonoDroid\bin\Debug\AmxMobile.PanicButton.MonoDroid.pdb
+c:\code\book\AmxMobile.PanicButton.MonoDroid\AmxMobile.PanicButton.MonoDroid\obj\Debug\res\layout\main.xml
+c:\code\book\AmxMobile.PanicButton.MonoDroid\AmxMobile.PanicButton.MonoDroid\obj\Debug\res\values\strings.xml
+c:\code\book\AmxMobile.PanicButton.MonoDroid\AmxMobile.PanicButton.MonoDroid\obj\Debug\res\drawable-hdpi\icon.png
+c:\code\book\AmxMobile.PanicButton.MonoDroid\AmxMobile.PanicButton.MonoDroid\obj\Debug\res\drawable-ldpi\icon.png
+c:\code\book\AmxMobile.PanicButton.MonoDroid\AmxMobile.PanicButton.MonoDroid\obj\Debug\res\drawable-mdpi\icon.png
+c:\code\book\AmxMobile.PanicButton.MonoDroid\AmxMobile.PanicButton.MonoDroid\obj\Debug\R.cs.flag
+c:\code\book\AmxMobile.PanicButton.MonoDroid\AmxMobile.PanicButton.MonoDroid\obj\Debug\ResolveAssemblyReference.cache
+c:\code\book\AmxMobile.PanicButton.MonoDroid\AmxMobile.PanicButton.MonoDroid\obj\Debug\AmxMobile.PanicButton.MonoDroid.dll
+c:\code\book\AmxMobile.PanicButton.MonoDroid\AmxMobile.PanicButton.MonoDroid\obj\Debug\AmxMobile.PanicButton.MonoDroid.pdb
