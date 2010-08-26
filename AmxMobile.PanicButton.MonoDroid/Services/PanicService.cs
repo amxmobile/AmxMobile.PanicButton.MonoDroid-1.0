@@ -13,70 +13,22 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-namespace AmxMobile.PanicButton.MonoDroid.Services
+namespace AmxMobile.PanicButton.MonoDroid
 {
-    public abstract class PanicService
+    public class PanicService : ServiceBase
     {
-        private string ServiceName { get; set; }
-
-        protected PanicService(string serviceName)
+        public PanicService()
+            : base("panicrest.aspx")
         {
-            this.ServiceName = serviceName;
         }
 
-        private string ServiceUrl
+        public void StartPanicking()
         {
-            get
-            {
-                return "http://192.168.1.105/amxpanic/webservices/" + this.ServiceName;
-            }
-        }
-
-        public XmlElement SendRequest(RestRequestArgs args)
-        {
-            // get...
-            XmlDocument doc = args.ToXmlDocument();
+            RestRequestArgs args = new RestRequestArgs("startpanicking");
+            args["ResourceId"] = PanicRuntime.ResourceId;
 
             // send...
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(this.ServiceUrl);
-
-            // bytes...
-            byte[] bs = Encoding.UTF8.GetBytes(doc.OuterXml);
-            request.ContentLength = bs.Length;
-            request.ContentType = "text/xml";
-            using (Stream stream = request.GetRequestStream())
-                stream.Write(bs, 0, bs.Length);
-
-            // run...
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-            
-            // load an answer...
-            XmlDocument answer = new XmlDocument();
-            using (Stream stream = response.GetResponseStream())
-                answer.Load(stream);
-
-            // response...
-            XmlElement responseElement = (XmlElement)answer.SelectSingleNode("RestResponse");
-            if(responseElement == null)
-	            throw new InvalidOperationException("'responseElement' is null.");
-
-            // find...
-            XmlElement hasErrorElement = (XmlElement)responseElement.SelectSingleNode("HasError");
-            if (hasErrorElement == null)
-                throw new InvalidOperationException("'hasErrorElement' is null.");
-
-            // is there a peoblem?
-            if (hasErrorElement.Value == "1")
-            {
-                XmlElement errorElement = (XmlElement)responseElement.SelectSingleNode("Error");
-                if (errorElement != null)
-                    throw new InvalidOperationException(errorElement.Value);
-                else
-                    throw new InvalidOperationException("An error occurred on the server, but no additional information was provided.");
-            }
-
-            // return...
-            return responseElement;
+            this.SendRequest(args);
         }
     }
 }

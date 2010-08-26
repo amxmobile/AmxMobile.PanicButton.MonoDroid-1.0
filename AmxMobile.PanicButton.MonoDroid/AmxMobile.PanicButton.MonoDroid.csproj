@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activity1.cs" />
+    <Compile Include="Objects\MessageBox.cs" />
     <Compile Include="Objects\PanicRuntime.cs" />
     <Compile Include="R.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

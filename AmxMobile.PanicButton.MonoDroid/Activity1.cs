@@ -29,7 +29,23 @@ namespace AmxMobile.PanicButton.MonoDroid
             // and attach an event to it
             Button button = FindViewById<Button>(R.id.myButton);
 
-            button.Click += delegate { button.Text = string.Format("{0} clicks!", count++); };
+            button.Click += new View.OnClickEventHandler(button_Click);
+        }
+
+        void button_Click(View v)
+        {
+            try
+            {
+                // start panicking...
+                PanicService service = new PanicService();
+
+                // show...
+                MessageBox.Show(this, "You are now panicking!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.ToString());
+            }
         }
     }
 }
